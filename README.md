@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # StackIt-A-Minimal-Q-A-Forum-Platform
 
@@ -7,6 +6,6 @@ StackIt is a minimal question-and-answer platform that supports collaborative le
 Team INNOVATORS
 
 1. Tashu garg - gargtashu631@gmail.com
-2. # Tanush Singla - iamtanushsingla@gmail.com
+2. Tanush Singla - iamtanushsingla@gmail.com
 
 #
