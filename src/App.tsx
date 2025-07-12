@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import QuestionDetail from "./components/QuestionDetail";
 import AskQuestion from "./components/AskQuestion";
 import NotFound from "./pages/NotFound";
+// import { Routes, Route } from 'react-router-dom';
+import Login from './pages/login';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,7 @@ const App = () => (
           <Route path="/ask" element={<AskQuestion />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
+           <Route path="/login" element={<Login />} /> {/* ✅ Add this */}
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

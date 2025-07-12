@@ -75,7 +75,7 @@ const Index = () => {
                   <User className="w-4 h-4 text-blue-600" />
                 </div>
                 <div className="hidden sm:block">
-                  <p className="text-sm font-medium text-gray-900">Alex Kumar</p>
+                  <p className="text-sm font-medium text-gray-900">Tanush Singla</p>
                   <p className="text-xs text-gray-500">12,340 reputation</p>
                 </div>
               </div>

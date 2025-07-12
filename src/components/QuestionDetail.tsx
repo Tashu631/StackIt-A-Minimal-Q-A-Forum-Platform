@@ -8,10 +8,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { ThumbsUp, ThumbsDown, MessageSquare, User, Clock, Check, Flag, Share2, Bookmark, Award, Eye, ArrowLeft, Zap } from "lucide-react";
 import { mockQuestions, mockAnswers } from "@/data/mockData";
 
+
+
 const QuestionDetail = () => {
   const { id } = useParams();
   const questionId = parseInt(id || "1");
-  
+  const [hasVoted, setHasVoted] = useState(false);
+
   const question = mockQuestions.find(q => q.id === questionId) || mockQuestions[0];
   const questionAnswers = mockAnswers.filter(a => a.questionId === questionId);
   
@@ -51,9 +54,22 @@ const QuestionDetail = () => {
     })));
   };
 
-  const handleQuestionVote = (voteType: 'up' | 'down') => {
-    setQuestionVotes(prev => prev + (voteType === 'up' ? 1 : -1));
-  };
+const handleQuestionVote = (voteType: 'up' | 'down') => {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    alert('You must be logged IN.');
+    return;
+  }
+
+  if (hasVoted) {
+    alert('You already voted!');
+    return;
+  }
+
+  setQuestionVotes(prev => prev + (voteType === 'up' ? 1 : -1));
+  setHasVoted(true);
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
